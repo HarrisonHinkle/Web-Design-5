@@ -1,0 +1,242 @@
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+  Colors
+*/
+:root {
+  --body-text: #333;
+  --grey-border: #e6e6e6;
+  --grey-text: #999;
+  --yellow-border: #ffcc00;
+}
+
+/*
+  Structure
+*/
+main {
+  /* make the width 730px, center on the page */
+  width: 730px;
+  margin: auto;
+}
+
+/*
+  Typography
+*/
+/* 
+  all headlines and figcaption
+    'Nunito', Gill Sans, Gill Sans MT, sans-serif*/
+h1, h2, h3, figcaption {
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+}
+/*  
+  paragraphs
+    'Noto Serif JP', 'Source Serif Pro', Georgia, serif
+    adjust size, line-height, color, and margin*/
+p {
+  font-family: 'Noto Serif JP', 'Source Serif Pro', Georgia, serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: black; 
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+/*
+  .graphic-text
+    'Nunito', Gill Sans, Gill Sans MT, sans-serif
+    uppercase, give it about 3px of letter spacing, weight is 300
+*/
+.graphic-text {
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+/*
+  Navigation
+*/
+nav {
+  /* white background, adjust padding, add a border on the bottom */
+  /* make sticky or fixed, set top coordinate, set z-index */
+  background-color: white;
+  padding-top: 5px;
+  border-bottom: 1px solid black;
+  position: sticky;
+  top: 0em;
+  z-index: 1;
+}
+
+.logo {
+  /* tell the logo to have a height of 32px */
+  height: 32px;
+  
+}
+
+/*
+  Header
+*/
+header {
+  /* adjust margin, add a border on the bottom */
+  margin-left: 40px;
+  border-bottom: 1px solid black;
+}
+
+.series-name {
+  /* consider adjusting font size and weight */
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+/* pay attention to how this works  */
+.series-name::after {
+  content: " ";
+  display: inline-block;
+  background:yellow;
+  background:
+    yellow;
+      width: 3px;
+      height: 14px;
+      margin: 0px 20px -1px;
+}
+
+.genre {
+  /* consider adjusting font size and weight */
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+h1 {
+  /* adjust font size and margin */
+  font-size: 36px;
+  margin: auto;
+}
+
+/* this means the H2 directly following the H1 */
+/* defaults ok for most H2 in this case */
+h1 + h2 {
+  /* adjust font size and margin and font weight */
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.byline {
+  /* adjust font size and margin */
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.byline-name {
+  /* adjust font weight */
+  font-weight: bold;
+}
+
+/*
+  Article
+*/
+article {
+  margin: 3.0em 0;
+}
+
+.date {
+  /* adjust font size, grey text */
+  font-size: 12px;
+  color: grey
+}
+
+.location {
+  /* adjust font size and weight */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.location::after {
+  /* search for 'mdash unicode' and include as content */
+  content: "\2014";
+}
+
+/* pay attention to how this works  */
+article p:nth-last-child(2)::after {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 15px;
+  margin-left: 8px;
+  border: 3px solid var(--yellow);
+  background: transparent;
+}
+
+.twitter {
+  /* add grey border, padding */
+  /* family is Nunito */
+  /* adjust font weight, font size, font style */
+  border: 1px solid grey;
+  padding: 20px;
+  font-family: Nunito;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+}
+
+/*
+  Images
+*/
+
+figure {
+  /* width is 666px, adjust margin */
+  width: 666px;
+  margin: 30px;
+}
+
+img {
+  /* this is set so IMG pays attention to width of parent (figure) */
+  width: 100%;
+}
+
+figcaption {
+  /* adjust font size, margin */
+  font-size: 14px;
+  margin-top: 20px
+}
+
+.credit {
+  /* adjust font size, margin, grey text  */
+  /* display block so it goes on a new line */
+  display: block;
+  font-size: 12px;
+  margin-top: 15px;
+  color: gray;
+}
+
+/*
+  Links
+*/
+a:link, a:visited {
+  /* black text, no text decoration, 2px yellow border on bottom */
+  color: black;
+  text-decoration: none;
+  border: 2px solid yellow;
+}
+
+.twitter a:link, .twitter a:visited {
+  /* grey text */
+  color: gray;
+}
+
+.twitter a:active, .twitter a:hover {
+  /* black text */
+  color: black;
+}
+
+/* https://ianlunn.github.io/Hover/ */
+/* Sweep To Top */
+
